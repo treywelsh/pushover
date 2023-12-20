@@ -2,6 +2,7 @@ package pushover
 
 import (
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/gregdel/pushover"
@@ -83,6 +84,7 @@ func (c *Controller) SendCustomMsg(msg Message) error {
 	}
 	// send it
 	response, err := c.app.SendMessage(&raw, c.dest)
+	log.Printf("response:%s\n====\nerr:%s", response, err)
 	if err != nil {
 		return fmt.Errorf("sending fail: %w", err)
 	} else if response != nil && response.Status != 1 {
