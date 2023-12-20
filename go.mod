@@ -1,4 +1,4 @@
-module github.com/hekmon/pushover/v2
+module github.com/treywelsh/pushover/v2
 
 go 1.14
 
